@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/landing", "destination": "/landing/index.html" },
+    { "source": "/landing/(.*)", "destination": "/landing/$1" },
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/((?!landing|assets|favicon|logo|pwa|apple|manifest).*)", "destination": "/index.html" }
+  ]
+}
