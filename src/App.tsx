@@ -624,6 +624,13 @@ export default function App() {
             </button>
 
 
+            <a
+              href="/landing"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl transition text-slate-600 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
+              title="View Landing Page"
+            >
+              Landing Page
+            </a>
           </nav>
 
           {/* Quick Shortcuts & Support - Only at the top, visible across devices */}
@@ -645,18 +652,6 @@ export default function App() {
               <span className="hidden sm:inline">Surprise Me</span>
               <span className="sm:hidden text-[11px] font-bold">Surprise</span>
             </button>
-
-            {/* Telegram Bot button */}
-            <a
-              href="https://t.me/micro_escapebot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-3 py-2.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 transition shadow-2xs cursor-pointer active:scale-95 shrink-0 focus-visible:outline-2 focus-visible:outline-sky-500 text-xs font-bold"
-              title="Telegram Bot (@micro_escapebot)"
-              aria-label="Telegram Bot (@micro_escapebot)"
-            >
-              Telegram
-            </a>
 
             {/* Support logo button */}
             <a

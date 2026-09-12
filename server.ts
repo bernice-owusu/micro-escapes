@@ -258,12 +258,9 @@ function generateFallbackItinerary(budget = 250, area = "Osu / Labone", day = "S
 
 async function startServer() {
   const landingPath = path.join(process.cwd(), "landing-page");
-  app.get(["/landing", "/landing-page"], (req, res) => {
-    res.redirect(301, req.path + "/");
-  });
   app.use("/landing", express.static(landingPath));
   app.use("/landing-page", express.static(landingPath));
-  app.get(["/landing/", "/landing-page/"], (_req, res) => {
+  app.get(["/landing", "/landing/*", "/landing-page", "/landing-page/*"], (_req, res) => {
     res.sendFile(path.join(landingPath, "index.html"));
   });
 
