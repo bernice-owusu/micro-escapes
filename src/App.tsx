@@ -722,7 +722,6 @@ export default function App() {
               }`}
             >
               <div className="flex items-center gap-1">
-                <span className="text-xs shrink-0">🇬🇭</span>
                 <span className="text-[11px] sm:text-xs font-bold">
                   Passport
                 </span>
@@ -900,7 +899,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="text-sky-600 hover:text-sky-800 font-semibold flex items-center gap-1 transition"
             >
-              <span>💬</span> Telegram Bot
+              Telegram Bot
             </a>
             <a
               href="https://wa.me/233559184383?text=Hello!%20I%20would%20like%20to%20book%20an%20escape%20in%20Accra%20via%20Micro%20Escapes."
@@ -908,7 +907,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="text-emerald-600 hover:text-emerald-800 font-semibold flex items-center gap-1 transition"
             >
-              <span>📱</span> WhatsApp Support
+              WhatsApp Support
             </a>
             <button
               onClick={() => setIsAdminModalOpen(true)}
