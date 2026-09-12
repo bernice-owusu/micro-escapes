@@ -25,12 +25,12 @@ logger = logging.getLogger(__name__)
 # --- Micro Escapes Listings Dataset (connected to web app) ---
 LISTINGS = [
     {
-        "id": "exp-kokrobite-beach",
-        "name": "Kokrobite Beach & Coast",
+        "id": "exp-kokrobite-surf",
+        "name": "Kokrobite Beach & Surf",
         "category": "beach",
-        "location": "accra",
+        "location": "kokrobite / accra",
         "price": "GH₵40",
-        "tags": ["beach", "budget", "relaxing", "ocean", "sunset", "accra"],
+        "tags": ["beach", "budget", "relaxing", "ocean", "sunset", "accra", "surf"],
     },
     {
         "id": "exp-bliss-bowling",
@@ -41,8 +41,8 @@ LISTINGS = [
         "tags": ["bowling", "arcade", "fun", "games", "friends", "date", "accra"],
     },
     {
-        "id": "exp-buka-restaurant",
-        "name": "Buka Restaurant",
+        "id": "exp-buka-courtyard",
+        "name": "Buka Restaurant & Courtyard",
         "category": "restaurant",
         "location": "osu",
         "price": "GH₵60–120",
@@ -57,7 +57,7 @@ LISTINGS = [
         "tags": ["beach", "sunset", "cocktails", "luxury", "labadi", "accra"],
     },
     {
-        "id": "exp-legon-gardens",
+        "id": "exp-legon-botanical",
         "name": "Legon Botanical Gardens",
         "category": "nature",
         "location": "legon",
@@ -90,7 +90,7 @@ LISTINGS = [
     },
 ]
 
-BASE_WEB_URL = os.getenv("MICRO_ESCAPES_URL", "http://localhost:3000")
+BASE_WEB_URL = os.getenv("MICRO_ESCAPES_URL", "https://micro-escapes.vercel.app").rstrip("/")
 
 
 def search_listings(query: str):

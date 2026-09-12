@@ -623,29 +623,7 @@ export default function App() {
               </span>
             </button>
 
-            <button
-              onClick={() => setCurrentView("saved")}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition relative cursor-pointer ${
-                currentView === "saved"
-                  ? "bg-slate-900 text-white shadow-xs"
-                  : "text-slate-600 hover:bg-slate-100"
-              }`}
-            >
-              Saved
-              {totalSavedCount > 0 && (
-                <span className="ml-1 bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">
-                  {totalSavedCount}
-                </span>
-              )}
-            </button>
 
-            <a
-              href="/landing"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl transition text-slate-600 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
-              title="View Cinematic Story & Landing Page"
-            >
-              Story
-            </a>
           </nav>
 
           {/* Quick Shortcuts & Support - Only at the top, visible across devices */}
@@ -744,22 +722,17 @@ export default function App() {
             </button>
 
             <button
-              onClick={() => setCurrentView("saved")}
-              className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-xl transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-center cursor-pointer relative min-h-[44px] ${
-                currentView === "saved"
+              onClick={() => setCurrentView("map")}
+              className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-xl transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-center cursor-pointer min-h-[44px] ${
+                currentView === "map"
                   ? "bg-slate-900 text-white shadow-2xs"
                   : "text-slate-600 hover:bg-slate-100"
               }`}
             >
               <div className="flex items-center gap-1">
-                <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 shrink-0" />
-                <span className="text-[11px] sm:text-xs font-bold">Saved</span>
+                <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                <span className="text-[11px] sm:text-xs font-bold">Map</span>
               </div>
-              {totalSavedCount > 0 && (
-                <span className="bg-rose-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">
-                  {totalSavedCount}
-                </span>
-              )}
             </button>
           </div>
         </div>
@@ -897,6 +870,48 @@ export default function App() {
           />
         )}
       </main>
+
+      {/* App Footer */}
+      <footer className="w-full border-t border-slate-200/80 bg-white/70 backdrop-blur-md py-6 px-4 mt-8">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="flex items-center gap-2">
+            <span className="font-extrabold text-slate-800">Micro Escapes</span>
+            <span>•</span>
+            <span>Accra, Ghana</span>
+            <span>•</span>
+            <a
+              href="/landing"
+              className="text-emerald-700 hover:text-emerald-900 font-semibold underline underline-offset-2 transition"
+            >
+              Cinematic Landing Page
+            </a>
+          </div>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <a
+              href="https://t.me/micro_escapebot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-600 hover:text-sky-800 font-semibold flex items-center gap-1 transition"
+            >
+              <span>💬</span> Telegram Bot
+            </a>
+            <a
+              href="https://wa.me/233559184383?text=Hello!%20I%20would%20like%20to%20book%20an%20escape%20in%20Accra%20via%20Micro%20Escapes."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-600 hover:text-emerald-800 font-semibold flex items-center gap-1 transition"
+            >
+              <span>📱</span> WhatsApp Support
+            </a>
+            <button
+              onClick={() => setIsAdminModalOpen(true)}
+              className="hover:text-slate-900 font-medium transition cursor-pointer"
+            >
+              Merchant Portal
+            </button>
+          </div>
+        </div>
+      </footer>
 
       {/* Modals & Drawers */}
       <ExperienceDetailModal
