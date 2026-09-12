@@ -260,6 +260,12 @@ async function startServer() {
   const landingPath = path.join(process.cwd(), "landing-page");
   app.use("/landing", express.static(landingPath));
   app.use("/landing-page", express.static(landingPath));
+  app.use(express.static(landingPath));
+
+  app.get("/", (_req, res) => {
+    res.sendFile(path.join(landingPath, "index.html"));
+  });
+
   app.get(["/landing", "/landing/*", "/landing-page", "/landing-page/*"], (_req, res) => {
     res.sendFile(path.join(landingPath, "index.html"));
   });

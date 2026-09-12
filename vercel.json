@@ -2,10 +2,13 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/", "destination": "/landing/index.html" },
     { "source": "/landing", "destination": "/landing/index.html" },
     { "source": "/landing/", "destination": "/landing/index.html" },
     { "source": "/landing-page", "destination": "/landing/index.html" },
     { "source": "/landing-page/", "destination": "/landing/index.html" },
+    { "source": "/app", "destination": "/index.html" },
+    { "source": "/app/(.*)", "destination": "/index.html" },
     { "source": "/((?!landing|landing-page|assets|favicon|logo|pwa|apple|manifest|api).*)", "destination": "/index.html" }
   ]
 }
