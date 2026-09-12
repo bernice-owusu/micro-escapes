@@ -35,6 +35,7 @@ import { WeekendEventsView } from "./components/WeekendEventsView";
 import { EscapeWheelModal } from "./components/EscapeWheelModal";
 import { BookingCheckoutModal } from "./components/BookingCheckoutModal";
 import { BusinessFeaturedModal } from "./components/BusinessFeaturedModal";
+import { LandingView } from "./components/LandingView";
 import {
   INITIAL_PASSPORT_STAMPS,
   INITIAL_WEEKLY_CHALLENGES,
@@ -50,6 +51,7 @@ import {
 import { useOnlineStatus } from "./hooks/useOnlineStatus";
 
 type AppView =
+  | "landing"
   | "recommend"
   | "events"
   | "loyalty"
@@ -118,7 +120,16 @@ export default function App() {
   });
 
   // Active view navigation
-  const [currentView, setCurrentView] = useState<AppView>("recommend");
+  const [currentView, setCurrentView] = useState<AppView>(() => {
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname;
+      const search = window.location.search;
+      if (path.startsWith("/app") || search.includes("view=") || search.includes("exp=")) {
+        return "recommend";
+      }
+    }
+    return "landing";
+  });
 
   // Loyalty Points & Passport State
   const [escapePoints, setEscapePoints] = useState<number>(() => {
@@ -559,12 +570,24 @@ export default function App() {
       {/* PWA In-App Install Banner */}
       <PWAInstallBanner />
 
-      {/* Global Brand Header */}
-      <header
-        className={`sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-2xs transition-transform duration-300 ease-out ${
-          isHeaderHidden ? "-translate-y-full" : "translate-y-0"
-        }`}
-      >
+      {/* VIEW 0: Cinematic Landing Page */}
+      {currentView === "landing" && (
+        <LandingView
+          onLaunchApp={(targetView = "recommend") => setCurrentView(targetView)}
+          onOpenWheel={() => {
+            setCurrentView("recommend");
+            setIsWheelOpen(true);
+          }}
+        />
+      )}
+
+      {/* Global Brand Header (Hidden on Landing View) */}
+      {currentView !== "landing" && (
+        <header
+          className={`sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-2xs transition-transform duration-300 ease-out ${
+            isHeaderHidden ? "-translate-y-full" : "translate-y-0"
+          }`}
+        >
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
           {/* Logo & Vision Tagline */}
           <div
@@ -623,13 +646,13 @@ export default function App() {
             </button>
 
 
-            <a
-              href="/landing"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl transition text-slate-600 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
+            <button
+              onClick={() => setCurrentView("landing")}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl transition cursor-pointer text-xs font-bold text-slate-600 hover:bg-slate-100 hover:text-slate-900"
               title="View Landing Page"
             >
               Landing Page
-            </a>
+            </button>
           </nav>
 
           {/* Quick Shortcuts & Support - Only at the top, visible across devices */}
@@ -718,9 +741,12 @@ export default function App() {
           </div>
         </div>
       </header>
+      )}
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-6">
+      {currentView !== "landing" && (
+        <>
+          {/* Main Content Area */}
+          <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-6">
         {/* VIEW 1: Recommendation Engine (The Heart of Micro Escapes) */}
         {currentView === "recommend" && (
           <GamifiedEscapeFinder
@@ -860,12 +886,12 @@ export default function App() {
             <span>•</span>
             <span>Accra, Ghana</span>
             <span>•</span>
-            <a
-              href="/landing"
-              className="text-emerald-700 hover:text-emerald-900 font-semibold underline underline-offset-2 transition"
+            <button
+              onClick={() => setCurrentView("landing")}
+              className="text-emerald-700 hover:text-emerald-900 font-semibold underline underline-offset-2 transition cursor-pointer"
             >
               Cinematic Landing Page
-            </a>
+            </button>
           </div>
           <div className="flex items-center gap-4 flex-wrap justify-center">
             <a
@@ -893,6 +919,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </>
+      )}
 
       {/* Modals & Drawers */}
       <ExperienceDetailModal
