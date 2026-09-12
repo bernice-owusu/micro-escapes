@@ -3,8 +3,9 @@
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/landing", "destination": "/landing/index.html" },
-    { "source": "/landing/(.*)", "destination": "/landing/$1" },
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!landing|assets|favicon|logo|pwa|apple|manifest).*)", "destination": "/index.html" }
+    { "source": "/landing/", "destination": "/landing/index.html" },
+    { "source": "/landing-page", "destination": "/landing/index.html" },
+    { "source": "/landing-page/", "destination": "/landing/index.html" },
+    { "source": "/((?!landing|landing-page|assets|favicon|logo|pwa|apple|manifest|api).*)", "destination": "/index.html" }
   ]
 }
