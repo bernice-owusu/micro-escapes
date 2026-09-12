@@ -10,7 +10,6 @@ import {
   CalendarDays,
   Flame,
   Heart,
-  MapPin,
   Shuffle,
   ShieldCheck,
   Share2,
@@ -716,19 +715,6 @@ export default function App() {
               </span>
             </button>
 
-            <button
-              onClick={() => setCurrentView("map")}
-              className={`py-1.5 sm:py-2 px-1.5 sm:px-3 rounded-xl transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-center cursor-pointer min-h-[44px] ${
-                currentView === "map"
-                  ? "bg-slate-900 text-white shadow-2xs"
-                  : "text-slate-600 hover:bg-slate-100"
-              }`}
-            >
-              <div className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0" />
-                <span className="text-[11px] sm:text-xs font-bold">Map</span>
-              </div>
-            </button>
           </div>
         </div>
       </header>
