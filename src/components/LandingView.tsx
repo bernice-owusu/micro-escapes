@@ -50,19 +50,17 @@ export function LandingView({ onLaunchApp, onOpenWheel }: LandingViewProps) {
     <div className="min-h-screen bg-slate-950 text-white font-sans selection:bg-emerald-500 selection:text-slate-950">
       {/* Hero Section with Parallax Background Image */}
       <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden px-4 sm:px-8 py-10">
-        {/* Background Image with Dark Gradient Overlay */}
+        {/* Background Image with Light Vignette Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/landing/hero-bg.jpg"
+            src="/hero-bg.jpg"
             alt="Accra coastline at sunset"
-            className="w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-110"
+            className="w-full h-full object-cover object-center scale-105 filter brightness-100 contrast-105"
             onError={(e) => {
-              // Fallback to local image if path fails
-              (e.currentTarget as HTMLImageElement).src = "/hero-bg.jpg";
+              (e.currentTarget as HTMLImageElement).src = "/landing/hero-bg.jpg";
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/60 to-slate-950" />
-          <div className="absolute inset-0 bg-radial from-transparent via-slate-950/40 to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/20 to-slate-950/90" />
         </div>
 
         {/* Top Floating Badge */}
