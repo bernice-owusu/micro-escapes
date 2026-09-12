@@ -644,15 +644,6 @@ export default function App() {
                 {escapePoints}
               </span>
             </button>
-
-
-            <button
-              onClick={() => setCurrentView("landing")}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl transition cursor-pointer text-xs font-bold text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              title="View Landing Page"
-            >
-              Landing Page
-            </button>
           </nav>
 
           {/* Quick Shortcuts & Support - Only at the top, visible across devices */}
