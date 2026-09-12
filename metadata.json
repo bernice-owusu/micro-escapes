@@ -1,0 +1,10 @@
+{
+  "name": "Micro Escapes",
+  "description": "Accra's activity and intent recommendation engine to quickly discover and plan affordable micro escapes based on mood, budget, group, and time.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

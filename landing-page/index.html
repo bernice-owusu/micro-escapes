@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micro Escapes — Accra Experience Recommendation Engine & Telegram Bot</title>
+    <meta name="description" content="Discover affordable things to do around Accra without spending hours searching. Available on the Web App and Telegram Bot (@micro_escapebot)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="site-shell">
+        <!-- Site Header with Direct App Connections -->
+        <header class="site-header">
+            <a href="/" class="site-logo" title="Micro Escapes Home">Micro Escapes</a>
+            <nav class="site-nav">
+                <a href="#sights">Escapes</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#ecosystem">Ecosystem</a>
+                <a href="#platforms">Platforms</a>
+                <a href="/?view=map" title="Interactive Neighborhood Map">Map</a>
+                <a href="/?view=events" title="Accra Weekend Events">Events</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/" class="header-launch-btn" title="Launch Interactive Web App">
+                    <span>Launch Web App</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Cinema Scroll Parallax Stage -->
+        <section class="cinema-scroll">
+            <div class="stage">
+                <div class="world">
+                    <!-- Layer 0: Sky -->
+                    <img
+                        class="scene-img sky-img"
+                        src="https://i.pinimg.com/736x/c7/80/4f/c7804ff67bf643101ae0a146d4fdba6e.jpg"
+                        alt="Accra scene"
+                    />
+
+                    <!-- Layer 1: Back Stack (Coast, Palms & Mist) -->
+                    <div class="back-stack">
+                        <img
+                            class="scene-img back-img"
+                            src="https://i.pinimg.com/736x/0f/fe/a8/0ffea8df394c04cb80cf6b227292ed1e.jpg"
+                            alt="Accra escape scene"
+                        />
+                        <img
+                            class="scene-img back-four"
+                            src="https://i.pinimg.com/736x/16/37/9e/16379e60870ad664607b1bb4a0cef5d4.jpg"
+                            alt="Accra greenery scene"
+                        />
+                        <img
+                            class="scene-img back-bazaar"
+                            src="https://i.pinimg.com/736x/c7/80/4f/c7804ff67bf643101ae0a146d4fdba6e.jpg"
+                            alt="Accra courtyard scene"
+                        />
+                        <div class="shade"></div>
+                    </div>
+
+                    <!-- Hero Title -->
+                    <h1 class="hero-title">Micro Escapes</h1>
+
+                    <!-- Scenic Midground Elements -->
+                    <img
+                        class="scene-img bridge-img"
+                        src="https://i.pinimg.com/736x/0f/fe/a8/0ffea8df394c04cb80cf6b227292ed1e.jpg"
+                        alt="Accra scenic view"
+                    />
+                    <div class="scene-img splitframe-img splitframe-left"></div>
+                    <div class="scene-img splitframe-img splitframe-right"></div>
+                    <div class="scene-img frame-two-img"></div>
+
+                    <!-- Intro Copy & Quick Action Connectors -->
+                    <div class="intro-copy">
+                        <p>You don't need a vacation. You need a little escape.</p>
+                        <div class="intro-stat">Accra's Activity & Intent Engine • Instant Booking on Web & Telegram</div>
+                        <div class="hero-cta-group">
+                            <a href="/?view=recommend" class="hero-cta-btn hero-cta-primary">
+                                <span>Find My Escape →</span>
+                            </a>
+                            <a href="https://t.me/micro_escapebot" target="_blank" rel="noopener noreferrer" class="hero-cta-btn hero-cta-bot">
+                                <span>💬 Open Telegram Bot</span>
+                            </a>
+                            <a href="/?action=wheel" class="hero-cta-btn hero-cta-wheel">
+                                <span>🎡 Spin Wheel</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Story Panels -->
+                    <div class="story-panel story-panel-bridge">
+                        <h2>Curated Moments</h2>
+                        <p>Spontaneous weekend getaways, authentic courtyard dining, and hidden adventures tailored in seconds.</p>
+                    </div>
+
+                    <div class="story-panel story-panel-bazaar">
+                        <h2>Always Affordable</h2>
+                        <div class="facts">
+                            <dl>
+                                <dt>50+</dt>
+                                <dd>Curated Escapes</dd>
+                            </dl>
+                            <dl>
+                                <dt>100%</dt>
+                                <dd>Verified Pricing</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!-- Sights Slider Carousel with Deep Links to Web App -->
+                    <div class="sights-slider" id="sights">
+                        <div class="sights-track">
+                            <article class="sight-card" data-sight-index="0" tabindex="0">
+                                <span class="sight-kicker">Beach & Sunset • GH₵40</span>
+                                <h3>Kokrobite & Labadi</h3>
+                                <p>Golden sand, Atlantic ocean breeze, and fresh coconut water along the coast.</p>
+                                <a href="/?exp=exp-kokrobite-beach" class="sight-card-action" title="View Kokrobite on Web App">View & Book ↗</a>
+                            </article>
+                            <article class="sight-card" data-sight-index="1" tabindex="0">
+                                <span class="sight-kicker">Games & Fun • GH₵80–160</span>
+                                <h3>Bliss Entertainment</h3>
+                                <p>High-energy bowling lanes, nostalgic arcade games, and active friendly date nights.</p>
+                                <a href="/?exp=exp-bliss-bowling" class="sight-card-action" title="View Bliss Bowling on Web App">View & Book ↗</a>
+                            </article>
+                            <article class="sight-card" data-sight-index="2" tabindex="0">
+                                <span class="sight-kicker">Dining & Courtyard • GH₵60</span>
+                                <h3>Buka & Asanka Local</h3>
+                                <p>Authentic Ghanaian courtyards, tender grilled tilapia, and chilled bissap juice.</p>
+                                <a href="/?exp=exp-buka-restaurant" class="sight-card-action" title="View Buka Restaurant on Web App">View & Book ↗</a>
+                            </article>
+                            <article class="sight-card" data-sight-index="3" tabindex="0">
+                                <span class="sight-kicker">Adventure & Nature • GH₵50</span>
+                                <h3>Wli & Volta Trails</h3>
+                                <p>Hike beneath West Africa's tallest waterfalls surrounded by tropical green canopies.</p>
+                                <a href="/?exp=exp-wli-falls" class="sight-card-action" title="View Wli Falls on Web App">View & Book ↗</a>
+                            </article>
+                            <article class="sight-card" data-sight-index="4" tabindex="0">
+                                <span class="sight-kicker">Hidden Gems • GH₵20–50</span>
+                                <h3>Legon Botanical Gardens</h3>
+                                <p>Suspended canopy walkway, tranquil lake canoe rides, and peaceful forest breeze.</p>
+                                <a href="/?exp=exp-legon-gardens" class="sight-card-action" title="View Legon Gardens on Web App">View & Book ↗</a>
+                            </article>
+                            <article class="sight-card" data-sight-index="5" tabindex="0">
+                                <span class="sight-kicker">Sunset Lounge • GH₵120</span>
+                                <h3>Sandbox Beach Club</h3>
+                                <p>Ocean breeze deck, craft cocktails, and sunset vibes with Atlantic views.</p>
+                                <a href="/?exp=exp-sandbox-beach" class="sight-card-action" title="View Sandbox Beach on Web App">View & Book ↗</a>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="sights-controls">
+                        <button class="sight-nav sight-prev" aria-label="Previous escape">‹</button>
+                        <button class="sight-nav sight-next" aria-label="Next escape">›</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+            <h2>How Micro Escapes Works</h2>
+            <ol class="steps">
+                <li>
+                    <span class="step-index">01</span>
+                    <h3>Tell us your vibe</h3>
+                    <p>Select what you feel like doing—relaxing by a pool, high-energy games, or an intimate courtyard dinner.</p>
+                </li>
+                <li>
+                    <span class="step-index">02</span>
+                    <h3>Instant smart match</h3>
+                    <p>We filter by your exact budget in Ghana Cedis (GH₵), party size, and neighborhood without endless searching.</p>
+                </li>
+                <li>
+                    <span class="step-index">03</span>
+                    <h3>Book in 2 taps</h3>
+                    <p>Reserve directly through our Telegram Bot or Web App with verified true pricing and zero hidden costs.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- CONNECTED APPS & ECOSYSTEM SECTION -->
+        <section class="ecosystem-section" id="ecosystem">
+            <div class="ecosystem-container">
+                <div class="ecosystem-header">
+                    <span class="ecosystem-eyebrow">CONNECTED APPS & TOOLS</span>
+                    <h2 class="ecosystem-title">All Your Accra Outings in One System</h2>
+                    <p class="ecosystem-subtitle">
+                        Every tool in the Micro Escapes suite is seamlessly connected. Jump into any app or view below with a single click.
+                    </p>
+                </div>
+
+                <div class="ecosystem-grid">
+                    <!-- App 1: Recommendation Engine -->
+                    <a href="/?view=recommend" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🎯</div>
+                                <span class="ecosystem-badge badge-green">Core Engine</span>
+                            </div>
+                            <h3>Find Escapes</h3>
+                            <p>Interactive 6-step gamified wizard matching mood, activity, crowd size, and budget tier in Cedis.</p>
+                        </div>
+                        <span class="ecosystem-action">Launch Wizard <span>→</span></span>
+                    </a>
+
+                    <!-- App 2: Escape Wheel -->
+                    <a href="/?action=wheel" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🎡</div>
+                                <span class="ecosystem-badge badge-amber">Spontaneous</span>
+                            </div>
+                            <h3>Spin the Wheel</h3>
+                            <p>Indecisive? Let fate choose your next Accra adventure with interactive spinning animations.</p>
+                        </div>
+                        <span class="ecosystem-action">Spin Wheel <span>→</span></span>
+                    </a>
+
+                    <!-- App 3: Surprise Me -->
+                    <a href="/?action=surprise" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🎲</div>
+                                <span class="ecosystem-badge badge-blue">Instant</span>
+                            </div>
+                            <h3>Surprise Me</h3>
+                            <p>One-tap spontaneous escape generator with instant pricing breakdown and quick reservation.</p>
+                        </div>
+                        <span class="ecosystem-action">Get Surprise <span>→</span></span>
+                    </a>
+
+                    <!-- App 4: Interactive Map -->
+                    <a href="/?view=map" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🗺️</div>
+                                <span class="ecosystem-badge badge-blue">Interactive</span>
+                            </div>
+                            <h3>Neighborhood Map</h3>
+                            <p>Browse escapes by geographic cluster across Osu, Labadi, East Legon, Cantonments, and Aburi.</p>
+                        </div>
+                        <span class="ecosystem-action">Explore Map <span>→</span></span>
+                    </a>
+
+                    <!-- App 5: Loyalty Passport -->
+                    <a href="/?view=loyalty" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🇬🇭</div>
+                                <span class="ecosystem-badge badge-amber">Rewards</span>
+                            </div>
+                            <h3>Accra Passport</h3>
+                            <p>Collect digital district stamps, earn escape points, and claim discounts on food, drinks & activities.</p>
+                        </div>
+                        <span class="ecosystem-action">Open Passport <span>→</span></span>
+                    </a>
+
+                    <!-- App 6: Build My Day AI -->
+                    <a href="/?view=day" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🗓️</div>
+                                <span class="ecosystem-badge badge-green">AI Generator</span>
+                            </div>
+                            <h3>Build My Day</h3>
+                            <p>Gemini AI generates full morning, afternoon, and evening itineraries tailored to your exact budget.</p>
+                        </div>
+                        <span class="ecosystem-action">Generate Day <span>→</span></span>
+                    </a>
+
+                    <!-- App 7: Weekend Events -->
+                    <a href="/?view=events" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">⚡</div>
+                                <span class="ecosystem-badge badge-rose">Live Events</span>
+                            </div>
+                            <h3>Weekend Events</h3>
+                            <p>Hand-curated Accra popups, rooftop jazz nights, beach social gatherings, and art exhibitions.</p>
+                        </div>
+                        <span class="ecosystem-action">Browse Events <span>→</span></span>
+                    </a>
+
+                    <!-- App 8: Telegram Bot -->
+                    <a href="https://t.me/micro_escapebot" target="_blank" rel="noopener noreferrer" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">💬</div>
+                                <span class="ecosystem-badge badge-blue">Telegram</span>
+                            </div>
+                            <h3>Telegram Bot</h3>
+                            <p>Search & book directly in Telegram on @micro_escapebot. No app download needed.</p>
+                        </div>
+                        <span class="ecosystem-action">Chat @micro_escapebot <span>↗</span></span>
+                    </a>
+
+                    <!-- App 9: WhatsApp Concierge -->
+                    <a href="https://wa.me/233559184383?text=Hello!%20I%20would%20like%20to%20book%20an%20escape%20in%20Accra%20via%20Micro%20Escapes." target="_blank" rel="noopener noreferrer" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">📱</div>
+                                <span class="ecosystem-badge badge-green">WhatsApp</span>
+                            </div>
+                            <h3>WhatsApp Concierge</h3>
+                            <p>Direct chat booking with our human concierge team at +233 55 918 4383 for fast assistance.</p>
+                        </div>
+                        <span class="ecosystem-action">Message Support <span>↗</span></span>
+                    </a>
+
+                    <!-- App 10: Merchant Portal -->
+                    <a href="/?action=admin" class="ecosystem-card">
+                        <div>
+                            <div class="ecosystem-card-top">
+                                <div class="ecosystem-icon">🛡️</div>
+                                <span class="ecosystem-badge badge-amber">For Venues</span>
+                            </div>
+                            <h3>Merchant Portal</h3>
+                            <p>Accra venue owners can submit new experiences, verify pricing, and manage featured listings.</p>
+                        </div>
+                        <span class="ecosystem-action">Curator Access <span>→</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLATFORMS Section -->
+        <section class="platforms-section" id="platforms">
+            <div class="platforms-container">
+                <div class="platforms-header">
+                    <span class="platforms-eyebrow">PLATFORMS</span>
+                    <div class="platforms-badge-pill">
+                        <span class="pulse-dot"></span>
+                        <span>Available on telegrambot</span>
+                    </div>
+                    <h2 class="platforms-title">Escape Anytime, Anywhere</h2>
+                    <p class="platforms-subtitle">
+                        Micro Escapes is built to meet you wherever you are. Chat directly in Telegram for lightning-fast recommendations or open our web application.
+                    </p>
+                </div>
+
+                <div class="platforms-grid">
+                    <!-- Telegram Bot Card (Featured) -->
+                    <div class="platform-card platform-card-telegram">
+                        <div class="telegram-glow"></div>
+                        <div>
+                            <div class="platform-card-header">
+                                <div class="platform-icon-box" aria-hidden="true">
+                                    💬
+                                </div>
+                                <div class="platform-live-badge">
+                                    <span class="live-dot"></span>
+                                    <span>Live Bot</span>
+                                </div>
+                            </div>
+
+                            <h3 class="platform-name">Telegram Bot</h3>
+                            <p class="platform-text">
+                                Search & book directly in Telegram. No app download needed. Works seamlessly across iPhone, Android, and Desktop.
+                            </p>
+
+                            <!-- Bot Handle Box -->
+                            <div class="bot-handle-card">
+                                <div class="bot-handle-meta">
+                                    <span class="bot-handle-label">Bot Handle:</span>
+                                    <a
+                                        href="https://t.me/micro_escapebot"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="bot-handle-value"
+                                    >
+                                        @micro_escapebot
+                                    </a>
+                                </div>
+                                <button
+                                    class="bot-copy-btn"
+                                    onclick="navigator.clipboard.writeText('@micro_escapebot'); this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy Handle', 2000)"
+                                >
+                                    Copy Handle
+                                </button>
+                            </div>
+
+                            <!-- Highlights -->
+                            <ul class="platform-features">
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>Direct chat intent matching</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>Zero storage or download</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>iPhone, Android & Desktop</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">✓</span>
+                                    <span>Instant Ghana Cedis pricing</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 14px;">
+                            <a
+                                href="https://t.me/micro_escapebot"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn-telegram"
+                            >
+                                <span>Open @micro_escapebot</span>
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.8rem; color: rgba(253,243,226,0.6);">
+                                <span>Try in bot:</span>
+                                <a href="https://t.me/micro_escapebot" target="_blank" style="color: #38bdf8; text-decoration: none;">"beach in Accra"</a> •
+                                <a href="https://t.me/micro_escapebot" target="_blank" style="color: #38bdf8; text-decoration: none;">"budget hotel Kumasi"</a> •
+                                <a href="https://t.me/micro_escapebot" target="_blank" style="color: #38bdf8; text-decoration: none;">"adventure Volta"</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Application Card -->
+                    <div class="platform-card platform-card-web">
+                        <div>
+                            <div class="platform-card-header">
+                                <div class="platform-icon-box" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                    🌐
+                                </div>
+                                <span class="platform-live-badge" style="color: #6ee7b7; background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3);">
+                                    Interactive SPA
+                                </span>
+                            </div>
+
+                            <h3 class="platform-name">Web App</h3>
+                            <p class="platform-text">
+                                Explore the full interactive recommendation wizard, spin the escape wheel, browse interactive district maps, and earn loyalty stamps.
+                            </p>
+
+                            <ul class="platform-features" style="grid-template-columns: 1fr; margin-bottom: 24px;">
+                                <li>
+                                    <span class="check-icon" style="color: #10b981;">✓</span>
+                                    <span>7-step gamified escape wizard</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon" style="color: #10b981;">✓</span>
+                                    <span>Accra Loyalty Passport stamps</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon" style="color: #10b981;">✓</span>
+                                    <span>Interactive neighborhood map</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a
+                                href="/"
+                                class="btn-secondary-app"
+                                style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #059669; color: #ffffff;"
+                            >
+                                <span>Launch Web App</span>
+                                <span aria-hidden="true">→</span>
+                            </a>
+                            <div style="display: flex; gap: 12px; font-size: 0.82rem;">
+                                <a href="/?view=map" style="color: #6ee7b7; text-decoration: none;">View Map →</a>
+                                <a href="/?view=loyalty" style="color: #6ee7b7; text-decoration: none;">Passport →</a>
+                                <a href="/?action=wheel" style="color: #6ee7b7; text-decoration: none;">Spin Wheel →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Site Footer -->
+        <footer class="site-footer">
+            <div class="footer-brand">
+                <a href="/" style="color: inherit; text-decoration: none;">Micro Escapes</a>
+            </div>
+            <div class="footer-links">
+                <a href="/">Web App</a>
+                <a href="/?view=recommend">Find Escapes</a>
+                <a href="/?view=map">Neighborhood Map</a>
+                <a href="/?view=loyalty">Passport</a>
+                <a href="/?action=wheel">Escape Wheel</a>
+                <a href="#platforms">Platforms</a>
+                <a href="https://t.me/micro_escapebot" target="_blank" rel="noopener noreferrer">Telegram Bot (@micro_escapebot)</a>
+                <a href="https://wa.me/233559184383" target="_blank" rel="noopener noreferrer">WhatsApp (+233 55 918 4383)</a>
+                <a href="/?action=admin">Merchant Portal</a>
+            </div>
+            <div class="footer-meta">
+                <span>Accra, Ghana</span>
+                <span>Bot: @micro_escapebot</span>
+                <span>© 2026 Micro Escapes</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
